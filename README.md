@@ -48,6 +48,8 @@ Supported obfuscators/packers
 * CodeFort
 * CodeVeil
 * CodeWall
+* Confuser
+* ConfuserEx
 * CryptoObfuscator
 * DeepSea Obfuscator
 * Dotfuscator
