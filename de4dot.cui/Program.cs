@@ -1,4 +1,4 @@
-/*
+﻿/*
     Copyright (C) 2011-2015 de4dot@gmail.com
 
     This file is part of de4dot.
@@ -29,7 +29,9 @@ using System.Reflection;
 namespace de4dot.cui {
 	class ExitException : Exception {
 		public readonly int code;
-		public ExitException(int code) => this.code = code;
+		public ExitException(int code) {
+			this.code = code;
+		}
 	}
 
 	class Program {
@@ -38,7 +40,7 @@ namespace de4dot.cui {
 		static IList<IDeobfuscatorInfo> LoadPlugin(string assembly) {
 			var plugins = new List<IDeobfuscatorInfo>();
 			try {
-				foreach (var item in Assembly.LoadFile(assembly).GetTypes()) {
+				foreach (Type item in Assembly.LoadFile(assembly).GetTypes()) {
 					var interfaces = new List<Type>(item.GetInterfaces());
 					if (item.IsClass && interfaces.Contains(typeof(IDeobfuscatorInfo)))
 						plugins.Add((IDeobfuscatorInfo)Activator.CreateInstance(item));
@@ -66,12 +68,14 @@ namespace de4dot.cui {
 			var local = new List<IDeobfuscatorInfo> {
 				new de4dot.code.deobfuscators.Unknown.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.Agile_NET.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Babel_NET.DeobfuscatorInfo(),
+                new de4dot.code.deobfuscators.AppFuscator.DeobfuscatorInfo(),
+                new de4dot.code.deobfuscators.Babel_NET.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.CodeFort.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.CodeVeil.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.CodeWall.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.Confuser.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.CryptoObfuscator.DeobfuscatorInfo(),
+                new de4dot.code.deobfuscators.ConfuserEx.DeobfuscatorInfo(),
+                new de4dot.code.deobfuscators.CryptoObfuscator.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.DeepSea.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.Dotfuscator.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.dotNET_Reactor.v3.DeobfuscatorInfo(),
@@ -86,7 +90,11 @@ namespace de4dot.cui {
 				new de4dot.code.deobfuscators.SmartAssembly.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.Spices_Net.DeobfuscatorInfo(),
 				new de4dot.code.deobfuscators.Xenocode.DeobfuscatorInfo(),
-			};
+                new de4dot.code.deobfuscators.Yano.DeobfuscatorInfo(),
+                new de4dot.code.deobfuscators.Manco_NET.DeobfuscatorInfo(),
+                new de4dot.code.deobfuscators.Phoneix_Protector.DeobfuscatorInfo(),
+                new de4dot.code.deobfuscators.Orange_Heap.DeobfuscatorInfo(),
+            };
 			var dict = new Dictionary<string, IDeobfuscatorInfo>();
 			foreach (var d in local)
 				dict[d.Type] = d;
@@ -95,21 +103,34 @@ namespace de4dot.cui {
 			return new List<IDeobfuscatorInfo>(dict.Values);
 		}
 
-		public static int Main(string[] args) {
-			int exitCode = 0;
+        [Obfuscation(Feature = "virtualization", Exclude = false)]
+        public static int Main(string[] args) {
+            Console.Title = "DeObfuscator For DotNet | By RCE-TH";
+            int exitCode = 0;
 
 			const string showAllMessagesEnvName = "SHOWALLMESSAGES";
 			try {
-				if (Console.OutputEncoding.IsSingleByte || Console.OutputEncoding.CodePage == 437)
+				if (Console.OutputEncoding.IsSingleByte)
 					Console.OutputEncoding = new UTF8Encoding(false);
-
-				Logger.Instance.CanIgnoreMessages = !HasEnv(showAllMessagesEnvName);
+                Console.ForegroundColor = ConsoleColor.White;
+                Logger.Instance.CanIgnoreMessages = !HasEnv(showAllMessagesEnvName);
 
 				Logger.n("");
-				Logger.n("de4dot v{0} Copyright (C) 2011-2015 de4dot@gmail.com", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
-				Logger.n("Latest version and source code: https://github.com/0xd4d/de4dot");
+				Logger.n("de4dot v{0} Copyright (C) 2011-2019 de4dot@gmail.com", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
+				//Logger.n("Latest version and source code: https://github.com/0xd4d/de4dot");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Logger.n(@"  _____     _____   ______        _______   _    _ ");
+                Logger.n(@" |  __ \   / ____| |  ____|      |__   __| | |  | |");
+                Logger.n(@" | |__) | | |      | |__   ______   | |    | |__| |");
+                Logger.n(@" |  _  /  | |      |  __| |______|  | |    |  __  |");
+                Logger.n(@" | | \ \  | |____  | |____          | |    | |  | |");
+                Logger.n(@" |_|  \_\  \_____| |______|         |_|    |_|  |_|");
+                Logger.n(@"");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Logger.n("Modified By RCE-TH | FB Group: " + "https://www.facebook.com/groups/2332629343428268/");
 				Logger.n("");
-
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Gray;
 				var options = new FilesDeobfuscator.Options();
 				ParseCommandLine(args, options);
 				new FilesDeobfuscator(options).DoIt();
@@ -181,7 +202,9 @@ namespace de4dot.cui {
 			return HasEnv("windir") && !HasEnv("PROMPT");
 		}
 
-		public static void PrintStackTrace(Exception ex) => PrintStackTrace(ex, LoggerEvent.Error);
+		public static void PrintStackTrace(Exception ex) {
+			PrintStackTrace(ex, LoggerEvent.Error);
+		}
 
 		public static void PrintStackTrace(Exception ex, LoggerEvent loggerEvent) {
 			var line = new string('-', 78);
