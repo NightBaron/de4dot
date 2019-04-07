@@ -1,0 +1,13 @@
+E:\RTN de4dot\Debug\de4dot-x64.exe.config
+E:\RTN de4dot\Debug\de4dot-x64.exe
+E:\RTN de4dot\Debug\de4dot-x64.pdb
+E:\RTN de4dot\de4dot-x64\obj\x86\Debug\de4dot-x64.csprojResolveAssemblyReference.cache
+E:\RTN de4dot\de4dot-x64\obj\x86\Debug\de4dot-x64.exe
+E:\RTN de4dot\de4dot-x64\obj\x86\Debug\de4dot-x64.pdb
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot-x64\obj\x86\Debug\de4dot-x64.csprojAssemblyReference.cache
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot-x64\obj\x86\Debug\de4dot-x64.csproj.CoreCompileInputs.cache
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\Debug\de4dot-x64.exe.config
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\Debug\de4dot-x64.exe
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\Debug\de4dot-x64.pdb
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot-x64\obj\x86\Debug\de4dot-x64.exe
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot-x64\obj\x86\Debug\de4dot-x64.pdb

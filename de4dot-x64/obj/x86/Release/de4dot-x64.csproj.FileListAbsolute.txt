@@ -1,0 +1,7 @@
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot-x64\obj\x86\Release\de4dot-x64.csprojAssemblyReference.cache
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot-x64\obj\x86\Release\de4dot-x64.csproj.CoreCompileInputs.cache
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\Release\de4dot-x64.exe.config
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\Release\de4dot-x64.exe
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\Release\de4dot-x64.pdb
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot-x64\obj\x86\Release\de4dot-x64.exe
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot-x64\obj\x86\Release\de4dot-x64.pdb
