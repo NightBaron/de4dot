@@ -1,0 +1,2 @@
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot\obj\x86\Release\de4dot.csprojAssemblyReference.cache
+C:\Users\NightBaron-RCE\Desktop\RTN de4dot\de4dot\obj\x86\Release\de4dot.csproj.CoreCompileInputs.cache

@@ -17,10 +17,17 @@
     along with de4dot.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-namespace de4dot_x86 {
-	class Program {
-		static int Main(string[] args) {
-			return de4dot.cui.Program.Main(args);
-		}
-	}
-}
+using System.Reflection;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle("de4dot")]
+[assembly: AssemblyDescription("Deobfuscates obfuscated .NET applications - x86")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("de4dot")]
+[assembly: AssemblyCopyright("Copyright (C) 2011-2015 de4dot@gmail.com")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: ComVisible(false)]
+[assembly: AssemblyVersion("3.1.41592.3405")]
+[assembly: AssemblyFileVersion("3.1.41592.3405")]
